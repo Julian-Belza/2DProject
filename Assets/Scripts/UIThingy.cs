@@ -7,7 +7,7 @@ public class UIThingy : MonoBehaviour
 {
     public void onClickStartButton()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Level1");
     }
 
     public void onClickMainMenu()
