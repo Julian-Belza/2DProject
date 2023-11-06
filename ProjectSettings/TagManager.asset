@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Potion
   - Win
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -48,4 +49,7 @@ TagManager:
     locked: 0
   - name: Forgroudn\
     uniqueID: 978819337
+    locked: 0
+  - name: Upfront
+    uniqueID: 1684633991
     locked: 0
