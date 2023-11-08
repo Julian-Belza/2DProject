@@ -8,6 +8,7 @@ TagManager:
   - Win
   - Enemy
   - Ronin
+  - King
   layers:
   - Default
   - TransparentFX
