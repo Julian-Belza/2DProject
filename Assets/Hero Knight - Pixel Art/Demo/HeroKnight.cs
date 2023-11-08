@@ -8,6 +8,11 @@ public class HeroKnight : MonoBehaviour {
     [SerializeField] float      m_rollForce = 6.0f;
     [SerializeField] bool       m_noBlood = false;
     [SerializeField] GameObject m_slideDust;
+    [SerializeField] Transform  m_attackPoint;
+    [SerializeField] float      m_attackRange = 0.5f;
+    [SerializeField] int        m_attackDamage = 20;
+    
+    public LayerMask enemyLayers;
 
     private Animator            m_animator;
     private Rigidbody2D         m_body2d;
@@ -111,6 +116,13 @@ public class HeroKnight : MonoBehaviour {
         {
             m_currentAttack++;
 
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(m_attackPoint.position, m_attackRange, enemyLayers);
+
+            foreach (Collider2D enemy in hitEnemies)
+            {
+                enemy.GetComponent<Enemy>().TakeDamage(m_attackDamage);
+            }
+
             // Loop back to one after third attack
             if (m_currentAttack > 3)
                 m_currentAttack = 1;
@@ -191,5 +203,13 @@ public class HeroKnight : MonoBehaviour {
             // Turn arrow in correct direction
             dust.transform.localScale = new Vector3(m_facingDirection, 1, 1);
         }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        if (m_attackPoint == null)
+            return;
+
+        Gizmos.DrawWireSphere(m_attackPoint.position, m_attackRange);
     }
 }
