@@ -4,25 +4,18 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public UIThingy UIThingy;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         switch (other.gameObject.tag)
         {
+            case "Potion":
+                GetComponent<HeroKnight>().m_potions[0]++;
+                Debug.Log(GetComponent<HeroKnight>().m_potions[0]);
+                other.gameObject.SetActive(false);
+                break;
+
             case "Win":
-                
+                Debug.Log("u won good job i guess");
                 break;
         }
     }

@@ -11,8 +11,12 @@ public class HeroKnight : MonoBehaviour {
     [SerializeField] Transform  m_attackPoint;
     [SerializeField] float      m_attackRange = 0.5f;
     [SerializeField] int        m_attackDamage = 20;
+    [SerializeField] float        m_playerHealth = 20;
+    [SerializeField] public int[] m_potions = new int[1];
     
     public LayerMask enemyLayers;
+    float maxHealing = 50;
+    public bool isBlocking = false;
 
     private Animator            m_animator;
     private Rigidbody2D         m_body2d;
@@ -108,8 +112,19 @@ public class HeroKnight : MonoBehaviour {
         }
             
         //Hurt
-        else if (Input.GetKeyDown("q") && !m_rolling)
-            m_animator.SetTrigger("Hurt");
+        else if (Input.GetKeyDown("r") && !m_rolling)
+        {
+            if (m_potions[0] > 0)
+            {
+                while (maxHealing >= 0)
+                {
+                    m_playerHealth += 10.0f * Time.deltaTime;
+                    maxHealing -= 15.0f * Time.deltaTime;
+                }
+                maxHealing = 50.0f;
+                m_potions[0]--;
+            }
+        }  
 
         //Attack
         else if(Input.GetMouseButtonDown(0) && m_timeSinceAttack > 0.25f && !m_rolling)
@@ -143,10 +158,15 @@ public class HeroKnight : MonoBehaviour {
         {
             m_animator.SetTrigger("Block");
             m_animator.SetBool("IdleBlock", true);
+            isBlocking = true;
+            m_speed = 2.0f;
         }
 
         else if (Input.GetMouseButtonUp(1))
+        {
             m_animator.SetBool("IdleBlock", false);
+            m_speed = 4.0f;
+        }
 
         // Roll
         else if (Input.GetKeyDown("left shift") && !m_rolling && !m_isWallSliding && m_grounded)

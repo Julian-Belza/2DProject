@@ -7,6 +7,14 @@ public class Enemy : MonoBehaviour
     public int maxHealth = 100;
     int currentHealth;
 
+    [SerializeField] private float attackCooldown;
+    [SerializeField] private float range;
+    [SerializeField] private float colliderDistance;
+    [SerializeField] private int damage;
+    [SerializeField] private BoxCollider2D boxCollider;
+    [SerializeField] private LayerMask playerLayer;
+    private float cooldownTimer = Mathf.Infinity;
+
     public Animator animator;
     // Start is called before the first frame update
     void Start()
@@ -29,7 +37,37 @@ public class Enemy : MonoBehaviour
     {
         animator.SetTrigger("Death");
 
+        
         GetComponent<Collider2D>().enabled = false;
+        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
         this.enabled = false;
+    }
+
+    private void Update()
+    {
+        cooldownTimer += Time.deltaTime;
+        if (PlayerInSight())
+        {
+            Debug.Log("banana balls");
+            if (cooldownTimer >= attackCooldown)
+            {
+                cooldownTimer = 0;
+                animator.SetTrigger("Attack");
+            }
+        }
+    }
+
+    private bool PlayerInSight()
+    {
+        RaycastHit2D hit = Physics2D.BoxCast(boxCollider.bounds.center + transform.right * range * transform.localScale.x * colliderDistance, 
+        new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z), 
+        0, Vector2.left, 0, playerLayer);
+        return hit.collider != null;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(boxCollider.bounds.center + transform.right * range * transform.localScale.x * colliderDistance, new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z));
     }
 }
