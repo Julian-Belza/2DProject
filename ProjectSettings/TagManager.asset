@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Ronin
   - King
+  - GameMusic
   layers:
   - Default
   - TransparentFX

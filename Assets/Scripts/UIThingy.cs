@@ -9,8 +9,6 @@ public class UIThingy : MonoBehaviour
     public Animator transition;
     public float animationTime;
 
-    public Slider health;
-
     public void OnClickStartButton()
     {
         StartCoroutine(TransitionLevels(2));
@@ -44,10 +42,5 @@ public class UIThingy : MonoBehaviour
         yield return new WaitForSeconds(animationTime);
 
         SceneManager.LoadScene(buildIndex);
-    }
-
-    private void Update()
-    {
-        
     }
 }

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class HeroKnight : MonoBehaviour {
 
@@ -11,12 +12,12 @@ public class HeroKnight : MonoBehaviour {
     [SerializeField] Transform  m_attackPoint;
     [SerializeField] float      m_attackRange = 0.5f;
     [SerializeField] int        m_attackDamage = 20;
-    [SerializeField] float        m_playerHealth = 20;
+    [SerializeField] float        m_playerHealth = 100;
     [SerializeField] public int[] m_potions = new int[1];
     
     public LayerMask enemyLayers;
-    float maxHealing = 50;
-    public bool isBlocking = false;
+    float maxHealing = 30;
+    public Healthbar Healthbar;
 
     private Animator            m_animator;
     private Rigidbody2D         m_body2d;
@@ -46,6 +47,8 @@ public class HeroKnight : MonoBehaviour {
         m_wallSensorR2 = transform.Find("WallSensor_R2").GetComponent<Sensor_HeroKnight>();
         m_wallSensorL1 = transform.Find("WallSensor_L1").GetComponent<Sensor_HeroKnight>();
         m_wallSensorL2 = transform.Find("WallSensor_L2").GetComponent<Sensor_HeroKnight>();
+
+        Healthbar.SetMaxHealth((int)m_playerHealth);
     }
 
     // Update is called once per frame
@@ -53,6 +56,7 @@ public class HeroKnight : MonoBehaviour {
     {
         // Increase timer that controls attack combo
         m_timeSinceAttack += Time.deltaTime;
+        Healthbar.SetHealth((int)m_playerHealth);
 
         // Increase timer that checks roll duration
         if(m_rolling)
@@ -158,14 +162,14 @@ public class HeroKnight : MonoBehaviour {
         {
             m_animator.SetTrigger("Block");
             m_animator.SetBool("IdleBlock", true);
-            isBlocking = true;
-            m_speed = 2.0f;
+            m_body2d.constraints = RigidbodyConstraints2D.FreezePositionX;
         }
 
         else if (Input.GetMouseButtonUp(1))
         {
             m_animator.SetBool("IdleBlock", false);
-            m_speed = 4.0f;
+            m_body2d.constraints = RigidbodyConstraints2D.None;
+            m_playerHealth -= 10;
         }
 
         // Roll
