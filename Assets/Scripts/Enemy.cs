@@ -4,43 +4,27 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public int maxHealth = 100;
-    int currentHealth;
-
+    [Header ("Attack Parameters")]
     [SerializeField] private float attackCooldown;
     [SerializeField] private float range;
+
+    [Header ("Collider Parameters")]
     [SerializeField] private float colliderDistance;
+
+    [Header ("Player Layer")]
     [SerializeField] private int damage;
     [SerializeField] private BoxCollider2D boxCollider;
     [SerializeField] private LayerMask playerLayer;
     private float cooldownTimer = Mathf.Infinity;
 
     public Animator animator;
+
+    private EnemyPatrol enemyPatrol;
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        currentHealth = maxHealth;
-    }
-
-    public void TakeDamage(int damage)
-    {
-        currentHealth -= damage;
-        animator.SetTrigger("Hurt");
-
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
-    }
-
-    void Die()
-    {
-        animator.SetTrigger("Death");
-
-        
-        GetComponent<Collider2D>().enabled = false;
-        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
-        this.enabled = false;
+        animator = GetComponent<Animator>();
+        enemyPatrol = GetComponentInParent<EnemyPatrol>();
     }
 
     private void Update()
@@ -48,13 +32,15 @@ public class Enemy : MonoBehaviour
         cooldownTimer += Time.deltaTime;
         if (PlayerInSight())
         {
-            Debug.Log("banana balls");
             if (cooldownTimer >= attackCooldown)
             {
                 cooldownTimer = 0;
                 animator.SetTrigger("Attack");
             }
         }
+
+        if (enemyPatrol != null)
+            enemyPatrol.enabled = !PlayerInSight();
     }
 
     private bool PlayerInSight()

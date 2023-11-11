@@ -12,12 +12,9 @@ public class HeroKnight : MonoBehaviour {
     [SerializeField] Transform  m_attackPoint;
     [SerializeField] float      m_attackRange = 0.5f;
     [SerializeField] int        m_attackDamage = 20;
-    [SerializeField] float        m_playerHealth = 100;
-    [SerializeField] public int[] m_potions = new int[1];
+    [SerializeField] public int m_potions;
     
     public LayerMask enemyLayers;
-    float maxHealing = 30;
-    public Healthbar Healthbar;
 
     private Animator            m_animator;
     private Rigidbody2D         m_body2d;
@@ -47,8 +44,6 @@ public class HeroKnight : MonoBehaviour {
         m_wallSensorR2 = transform.Find("WallSensor_R2").GetComponent<Sensor_HeroKnight>();
         m_wallSensorL1 = transform.Find("WallSensor_L1").GetComponent<Sensor_HeroKnight>();
         m_wallSensorL2 = transform.Find("WallSensor_L2").GetComponent<Sensor_HeroKnight>();
-
-        Healthbar.SetMaxHealth((int)m_playerHealth);
     }
 
     // Update is called once per frame
@@ -56,7 +51,6 @@ public class HeroKnight : MonoBehaviour {
     {
         // Increase timer that controls attack combo
         m_timeSinceAttack += Time.deltaTime;
-        Healthbar.SetHealth((int)m_playerHealth);
 
         // Increase timer that checks roll duration
         if(m_rolling)
@@ -118,28 +112,20 @@ public class HeroKnight : MonoBehaviour {
         //Hurt
         else if (Input.GetKeyDown("r") && !m_rolling)
         {
-            if (m_potions[0] > 0)
-            {
-                while (maxHealing >= 0)
-                {
-                    m_playerHealth += 10.0f * Time.deltaTime;
-                    maxHealing -= 15.0f * Time.deltaTime;
-                }
-                maxHealing = 50.0f;
-                m_potions[0]--;
-            }
+            
         }  
 
         //Attack
         else if(Input.GetMouseButtonDown(0) && m_timeSinceAttack > 0.25f && !m_rolling)
         {
             m_currentAttack++;
+            m_speed = 2.0f;
 
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(m_attackPoint.position, m_attackRange, enemyLayers);
 
             foreach (Collider2D enemy in hitEnemies)
             {
-                enemy.GetComponent<Enemy>().TakeDamage(m_attackDamage);
+                enemy.GetComponent<Health>().TakeDamage(m_attackDamage);
             }
 
             // Loop back to one after third attack
@@ -157,6 +143,11 @@ public class HeroKnight : MonoBehaviour {
             m_timeSinceAttack = 0.0f;
         }
 
+        else if (Input.GetMouseButtonUp(0) && !m_rolling)
+        {
+            m_speed = 4.0f;
+        }
+
         // Block
         else if (Input.GetMouseButtonDown(1) && !m_rolling)
         {
@@ -169,7 +160,7 @@ public class HeroKnight : MonoBehaviour {
         {
             m_animator.SetBool("IdleBlock", false);
             m_body2d.constraints = RigidbodyConstraints2D.None;
-            m_playerHealth -= 10;
+            m_body2d.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
 
         // Roll
