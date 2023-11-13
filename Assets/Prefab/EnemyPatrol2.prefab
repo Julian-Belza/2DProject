@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3077525998690682210}
-  - component: {fileID: 9154917535729331303}
+  - component: {fileID: 6241876327934378439}
   m_Layer: 6
   m_Name: EnemyPatrol2
   m_TagString: Enemy
@@ -56,7 +56,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6647965742875681310}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.0448046, y: 0.29450953, z: 0.09047403}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -66,7 +66,7 @@ Transform:
   - {fileID: 8659375158181850193}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9154917535729331303
+--- !u!114 &6241876327934378439
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -75,7 +75,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6647965742875681310}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea08af57db1ddd244b72a56747c1b2b7, type: 3}
+  m_Script: {fileID: 11500000, guid: 7af2335b34f914a489ddc6953d424638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   leftEdge: {fileID: 1874199498520975406}
@@ -109,7 +109,7 @@ Transform:
   m_GameObject: {fileID: 9208246966993630708}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.6, y: 1.69, z: 0}
+  m_LocalPosition: {x: -2.264, y: 1.69, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -191,6 +191,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 50959880312528810, guid: 3248535f6a2562c489a1223a75951ef2, type: 3}
+      propertyPath: m_Mass
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 50959880312528810, guid: 3248535f6a2562c489a1223a75951ef2, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50959880312528810, guid: 3248535f6a2562c489a1223a75951ef2, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 61346583712760016, guid: 3248535f6a2562c489a1223a75951ef2, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -202,18 +214,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1463392086428580, guid: 3248535f6a2562c489a1223a75951ef2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7034632657546977534}
+    - targetCorrespondingSourceObject: {fileID: 1463392086428580, guid: 3248535f6a2562c489a1223a75951ef2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8205352633009473158}
   m_SourcePrefab: {fileID: 100100000, guid: 3248535f6a2562c489a1223a75951ef2, type: 3}
---- !u!114 &363226977904478116 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -200837566829699309, guid: 3248535f6a2562c489a1223a75951ef2, type: 3}
-  m_PrefabInstance: {fileID: 8663811117662476471}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8663017744773452563}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 016cc84af30c07644b06244c79793e0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &8659375158181850193 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4588935210562790, guid: 3248535f6a2562c489a1223a75951ef2, type: 3}
@@ -240,8 +244,29 @@ MonoBehaviour:
   iFramesDuration: 0
   numberOfFlashes: 0
   components:
-  - {fileID: 363226977904478116}
-  - {fileID: 9154917535729331303}
+  - {fileID: 7034632657546977534}
+  - {fileID: 0}
+--- !u!114 &8205352633009473158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8663017744773452563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7e99edeec5c79340bdd0c469b5b08b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackCooldown: 1.5
+  range: 0.85
+  colliderDistance: -0.76
+  damage: 20
+  boxCollider: {fileID: 8711641920322410599}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  animator: {fileID: 8748268363013685195}
 --- !u!61 &8711641920322410599 stripped
 BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 61346583712760016, guid: 3248535f6a2562c489a1223a75951ef2, type: 3}

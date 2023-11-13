@@ -11,6 +11,8 @@ public class Health : MonoBehaviour
     private Animator anim;
     private bool dead;
 
+    public HeroKnight HeroKnight;
+
     [Header ("iFrames")]
     [SerializeField] private float iFramesDuration;
     [SerializeField] private int numberOfFlashes;
@@ -34,8 +36,14 @@ public class Health : MonoBehaviour
 
         if (currentHealth > 0)
         {
-            anim.SetTrigger("Hurt");
-            StartCoroutine(invulnerability());
+            if (!HeroKnight.isBlocking)
+            {
+                anim.SetTrigger("Hurt");
+                StartCoroutine(invulnerability());
+            } else if (HeroKnight.isBlocking)
+            {
+                HeroKnight.m_animator.SetBool("IdleBlock", true);
+            }
         } else 
         {
             if (!dead)
