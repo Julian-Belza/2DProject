@@ -279,6 +279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthValue: 30
+  HeroKnight: {fileID: 715772785}
 --- !u!1 &92205725
 GameObject:
   m_ObjectHideFlags: 0
@@ -1693,6 +1694,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9043920546160527475, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
+      propertyPath: m_noBlood
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2094,6 +2099,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 0.4}
   m_EdgeRadius: 0
+--- !u!114 &715772785 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9043920546160527475, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
+  m_PrefabInstance: {fileID: 513940553}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f5034bc83802944c9bca57c55e08978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &728011161
 GameObject:
   m_ObjectHideFlags: 0
@@ -3838,6 +3854,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 50512961935941442, guid: 2e2183501755a214591e802f3aff33d2, type: 3}
+      propertyPath: m_Mass
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 50512961935941442, guid: 2e2183501755a214591e802f3aff33d2, type: 3}
       propertyPath: m_LinearDrag
       value: 0
       objectReference: {fileID: 0}
@@ -4553,7 +4573,18 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 8748268363013685195, guid: 6353a566c4f7e5a44becbb206a4c636f, type: 3}
   m_PrefabInstance: {fileID: 966058486746466529}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1576609836
+--- !u!114 &1576609838 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7034632657546977534, guid: 6353a566c4f7e5a44becbb206a4c636f, type: 3}
+  m_PrefabInstance: {fileID: 966058486746466529}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576609829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f40055d4c297612439513757393b1a4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1576609841
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4562,13 +4593,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1576609829}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 016cc84af30c07644b06244c79793e0e, type: 3}
+  m_Script: {fileID: 11500000, guid: d7e99edeec5c79340bdd0c469b5b08b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 1.5
-  range: -1.16
-  colliderDistance: 0.62
-  damage: 10
+  range: 1.11
+  colliderDistance: -0.72
+  damage: 20
   boxCollider: {fileID: 1331929586}
   playerLayer:
     serializedVersion: 2
@@ -5142,6 +5173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthValue: 30
+  HeroKnight: {fileID: 715772785}
 --- !u!1 &1685431315
 GameObject:
   m_ObjectHideFlags: 0
@@ -7453,6 +7485,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyPatrol2
       objectReference: {fileID: 0}
+    - target: {fileID: 7034632657546977534, guid: 6353a566c4f7e5a44becbb206a4c636f, type: 3}
+      propertyPath: components.Array.data[0]
+      value: 
+      objectReference: {fileID: 1576609838}
+    - target: {fileID: 8685475498451076893, guid: 6353a566c4f7e5a44becbb206a4c636f, type: 3}
+      propertyPath: m_Mass
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 8685475498451076893, guid: 6353a566c4f7e5a44becbb206a4c636f, type: 3}
       propertyPath: m_LinearDrag
       value: 0
@@ -7467,7 +7507,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8663017744773452563, guid: 6353a566c4f7e5a44becbb206a4c636f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1576609836}
+      addedObject: {fileID: 1576609841}
   m_SourcePrefab: {fileID: 100100000, guid: 6353a566c4f7e5a44becbb206a4c636f, type: 3}
 --- !u!1001 &7058865496872632738
 PrefabInstance:
@@ -7524,6 +7564,10 @@ PrefabInstance:
     - target: {fileID: 6258960172817067095, guid: 83def704e8358184487a39ae71e7b627, type: 3}
       propertyPath: m_Name
       value: EnemyPatrol
+      objectReference: {fileID: 0}
+    - target: {fileID: 6642407131896344193, guid: 83def704e8358184487a39ae71e7b627, type: 3}
+      propertyPath: m_Mass
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6642407131896344193, guid: 83def704e8358184487a39ae71e7b627, type: 3}
       propertyPath: m_LinearDrag
