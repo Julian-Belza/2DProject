@@ -932,6 +932,7 @@ GameObject:
   - component: {fileID: 404507155}
   - component: {fileID: 404507156}
   - component: {fileID: 404507157}
+  - component: {fileID: 404507158}
   m_Layer: 0
   m_Name: env_objects_116 (1)
   m_TagString: Untagged
@@ -1013,7 +1014,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 404507154}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -1051,6 +1052,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!210 &404507158
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404507154}
+  m_Enabled: 1
+  m_SortingLayerID: -1108016243
+  m_SortingLayer: -1
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1 &441534397
 GameObject:
   m_ObjectHideFlags: 0
@@ -3322,6 +3335,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1183080798}
+  - component: {fileID: 1183080799}
   m_Layer: 0
   m_Name: Broken Pillar (1)
   m_TagString: Untagged
@@ -3349,6 +3363,18 @@ Transform:
   - {fileID: 1729467320}
   m_Father: {fileID: 455459686}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!210 &1183080799
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183080797}
+  m_Enabled: 1
+  m_SortingLayerID: -1108016243
+  m_SortingLayer: -1
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1 &1236478402
 GameObject:
   m_ObjectHideFlags: 0
@@ -3981,6 +4007,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1379608304}
+  - component: {fileID: 1379608305}
   m_Layer: 0
   m_Name: Broken Half Pillar
   m_TagString: Untagged
@@ -4008,6 +4035,18 @@ Transform:
   - {fileID: 732075198}
   m_Father: {fileID: 455459686}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!210 &1379608305
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379608303}
+  m_Enabled: 1
+  m_SortingLayerID: -1108016243
+  m_SortingLayer: -1
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1 &1381472477
 GameObject:
   m_ObjectHideFlags: 0
@@ -5315,6 +5354,7 @@ GameObject:
   - component: {fileID: 1729467320}
   - component: {fileID: 1729467321}
   - component: {fileID: 1729467322}
+  - component: {fileID: 1729467323}
   m_Layer: 0
   m_Name: env_objects_48 (1)
   m_TagString: Untagged
@@ -5396,7 +5436,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1729467319}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -5434,6 +5474,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!210 &1729467323
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729467319}
+  m_Enabled: 1
+  m_SortingLayerID: -1108016243
+  m_SortingLayer: -1
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1 &1768083298
 GameObject:
   m_ObjectHideFlags: 0
@@ -6374,6 +6426,7 @@ GameObject:
   - component: {fileID: 1963495356}
   - component: {fileID: 1963495357}
   - component: {fileID: 1963495358}
+  - component: {fileID: 1963495359}
   m_Layer: 0
   m_Name: env_objects_114 (1)
   m_TagString: Untagged
@@ -6455,7 +6508,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1963495355}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -6493,6 +6546,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!210 &1963495359
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963495355}
+  m_Enabled: 1
+  m_SortingLayerID: -1108016243
+  m_SortingLayer: -1
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1 &1974115607
 GameObject:
   m_ObjectHideFlags: 0
@@ -7294,6 +7359,7 @@ GameObject:
   - component: {fileID: 2104971881}
   - component: {fileID: 2104971882}
   - component: {fileID: 2104971883}
+  - component: {fileID: 2104971884}
   m_Layer: 0
   m_Name: env_objects_115 (1)
   m_TagString: Untagged
@@ -7375,7 +7441,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2104971880}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -7413,6 +7479,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!210 &2104971884
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104971880}
+  m_Enabled: 1
+  m_SortingLayerID: -1108016243
+  m_SortingLayer: -1
+  m_SortingOrder: 0
+  m_SortAtRoot: 0
 --- !u!1001 &966058486746466529
 PrefabInstance:
   m_ObjectHideFlags: 0
