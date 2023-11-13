@@ -30,14 +30,9 @@ public class UIThingy : MonoBehaviour
         Application.Quit();
     }
 
-    public void OnClickNextLevel()
-    {
-        StartCoroutine(TransitionLevels(SceneManager.GetActiveScene().buildIndex + 1));
-    }
-
     IEnumerator TransitionLevels(int buildIndex)
     {
-        transition.SetTrigger("Start");
+        transition.SetTrigger("Win");
 
         yield return new WaitForSeconds(animationTime);
 

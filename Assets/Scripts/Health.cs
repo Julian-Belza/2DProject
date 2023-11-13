@@ -35,7 +35,7 @@ public class Health : MonoBehaviour
         if (currentHealth > 0)
         {
             anim.SetTrigger("Hurt");
-            StartCoroutine(Invunerability());
+            StartCoroutine(invulnerability());
         } else 
         {
             if (!dead)
@@ -58,10 +58,10 @@ public class Health : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth + _value, 0, startingHealth);
     }
 
-    private IEnumerator Invunerability()
+    public IEnumerator invulnerability()
     {
         Physics2D.IgnoreLayerCollision(6,7, true);
-        for (int i = 0; i <numberOfFlashes; i++)
+        for (int i = 0; i < numberOfFlashes; i++)
         {
             spriteRend.color = new Color(1,1,1, 0.5f);
             yield return new WaitForSeconds(iFramesDuration / (numberOfFlashes * 2));

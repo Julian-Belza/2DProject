@@ -6,12 +6,16 @@ public class Potion : MonoBehaviour
 {
     [SerializeField] private float healthValue;
 
+    public HeroKnight HeroKnight;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
-            other.GetComponent<Health>().AddHealth(healthValue);
+            HeroKnight.m_potions++;
             gameObject.SetActive(false);
+        } else {
+            return;
         }
     }
 }
