@@ -1650,6 +1650,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 610223991038747135, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
+      propertyPath: HeroKnight
+      value: 
+      objectReference: {fileID: 715772785}
     - target: {fileID: 6323719953710832613, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       propertyPath: m_Name
       value: HeroKnight
@@ -1698,6 +1702,10 @@ PrefabInstance:
       propertyPath: m_noBlood
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9043920546160527475, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
+      propertyPath: m_animator
+      value: 
+      objectReference: {fileID: 715772790}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2110,6 +2118,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f5034bc83802944c9bca57c55e08978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &715772790 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2655505060201611074, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
+  m_PrefabInstance: {fileID: 513940553}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &728011161
 GameObject:
   m_ObjectHideFlags: 0
@@ -4569,6 +4582,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1285920026}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1576609838 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7034632657546977534, guid: 6353a566c4f7e5a44becbb206a4c636f, type: 3}
+  m_PrefabInstance: {fileID: 966058486746466529}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f40055d4c297612439513757393b1a4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1576609841 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8205352633009473158, guid: 6353a566c4f7e5a44becbb206a4c636f, type: 3}
@@ -6999,6 +7023,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 50
+  HeroKnight: {fileID: 715772785}
   iFramesDuration: 0
   numberOfFlashes: 0
   components:
@@ -7025,6 +7050,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   animator: {fileID: 2083550902}
+  HeroKnight: {fileID: 715772785}
 --- !u!1 &2091129419
 GameObject:
   m_ObjectHideFlags: 0
@@ -7441,8 +7467,12 @@ PrefabInstance:
       value: EnemyPatrol2
       objectReference: {fileID: 0}
     - target: {fileID: 7034632657546977534, guid: 6353a566c4f7e5a44becbb206a4c636f, type: 3}
+      propertyPath: HeroKnight
+      value: 
+      objectReference: {fileID: 715772785}
+    - target: {fileID: 7034632657546977534, guid: 6353a566c4f7e5a44becbb206a4c636f, type: 3}
       propertyPath: components.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7034632657546977534, guid: 6353a566c4f7e5a44becbb206a4c636f, type: 3}
       propertyPath: components.Array.data[0]
@@ -7452,6 +7482,18 @@ PrefabInstance:
       propertyPath: components.Array.data[1]
       value: 
       objectReference: {fileID: 1467907251}
+    - target: {fileID: 7034632657546977534, guid: 6353a566c4f7e5a44becbb206a4c636f, type: 3}
+      propertyPath: components.Array.data[2]
+      value: 
+      objectReference: {fileID: 1576609838}
+    - target: {fileID: 8205352633009473158, guid: 6353a566c4f7e5a44becbb206a4c636f, type: 3}
+      propertyPath: damage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8205352633009473158, guid: 6353a566c4f7e5a44becbb206a4c636f, type: 3}
+      propertyPath: HeroKnight
+      value: 
+      objectReference: {fileID: 715772785}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7465,6 +7507,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 229688769}
     m_Modifications:
+    - target: {fileID: 331423492316700965, guid: 83def704e8358184487a39ae71e7b627, type: 3}
+      propertyPath: HeroKnight
+      value: 
+      objectReference: {fileID: 715772785}
     - target: {fileID: 584913545912078532, guid: 83def704e8358184487a39ae71e7b627, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.1706696
@@ -7509,6 +7555,10 @@ PrefabInstance:
       propertyPath: damage
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2224538303059123842, guid: 83def704e8358184487a39ae71e7b627, type: 3}
+      propertyPath: HeroKnight
+      value: 
+      objectReference: {fileID: 715772785}
     - target: {fileID: 5617371980418452343, guid: 83def704e8358184487a39ae71e7b627, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.63

@@ -15,8 +15,9 @@ public class HeroKnight : MonoBehaviour {
     [SerializeField] public int m_potions;
     
     public LayerMask enemyLayers;
+    public bool isBlocking;
 
-    private Animator            m_animator;
+    public Animator            m_animator;
     private Rigidbody2D         m_body2d;
     private Sensor_HeroKnight   m_groundSensor;
     private Sensor_HeroKnight   m_wallSensorR1;
@@ -44,6 +45,7 @@ public class HeroKnight : MonoBehaviour {
         m_wallSensorR2 = transform.Find("WallSensor_R2").GetComponent<Sensor_HeroKnight>();
         m_wallSensorL1 = transform.Find("WallSensor_L1").GetComponent<Sensor_HeroKnight>();
         m_wallSensorL2 = transform.Find("WallSensor_L2").GetComponent<Sensor_HeroKnight>();
+        isBlocking = false;
     }
 
     // Update is called once per frame
@@ -108,6 +110,7 @@ public class HeroKnight : MonoBehaviour {
             if (m_potions > 0)
             {
                 GetComponent<Health>().AddHealth(30.0f);
+                m_potions--;
             }
         }  
 
@@ -149,12 +152,14 @@ public class HeroKnight : MonoBehaviour {
         {
             m_animator.SetTrigger("Block");
             m_animator.SetBool("IdleBlock", true);
+            isBlocking = true;
             m_body2d.constraints = RigidbodyConstraints2D.FreezePositionX;
         }
 
         else if (Input.GetMouseButtonUp(1))
         {
             m_animator.SetBool("IdleBlock", false);
+            isBlocking = false;
             m_body2d.constraints = RigidbodyConstraints2D.None;
             m_body2d.constraints = RigidbodyConstraints2D.FreezeRotation;
         }

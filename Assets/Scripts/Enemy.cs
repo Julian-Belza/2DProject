@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour
     public Animator animator;
 
     private Health playerHealth;
+    public HeroKnight HeroKnight;
 
     private EnemyPatrol enemyPatrol;
     // Start is called before the first frame update
@@ -64,9 +65,12 @@ public class Enemy : MonoBehaviour
 
     private void DamagePlayer()
     {
-        if (PlayerInSight())
+        if (PlayerInSight() && !HeroKnight.isBlocking)
         {
             playerHealth.TakeDamage(damage);
+        } else if (PlayerInSight() && HeroKnight.isBlocking)
+        {
+            playerHealth.TakeDamage(damage / 2);
         }
     }
 }
