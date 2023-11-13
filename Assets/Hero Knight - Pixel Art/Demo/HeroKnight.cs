@@ -101,18 +101,14 @@ public class HeroKnight : MonoBehaviour {
         //Wall Slide
         m_isWallSliding = (m_wallSensorR1.State() && m_wallSensorR2.State()) || (m_wallSensorL1.State() && m_wallSensorL2.State());
         m_animator.SetBool("WallSlide", m_isWallSliding);
-
-        //Death
-        if (Input.GetKeyDown("e") && !m_rolling)
-        {
-            m_animator.SetBool("noBlood", m_noBlood);
-            m_animator.SetTrigger("Death");
-        }
             
-        //Hurt
-        else if (Input.GetKeyDown("r") && !m_rolling)
+        //Heal
+        if (Input.GetKeyDown("r") && !m_rolling)
         {
-            
+            if (m_potions > 0)
+            {
+                GetComponent<Health>().AddHealth(30.0f);
+            }
         }  
 
         //Attack
