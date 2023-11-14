@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skeleton : MonoBehaviour
+public class BatPatrol : MonoBehaviour
 {
     [Header ("Attack Parameters")]
     [SerializeField] private float attackCooldown;
@@ -22,12 +22,12 @@ public class Skeleton : MonoBehaviour
     private Health playerHealth;
     public HeroKnight HeroKnight;
 
-    private OtherEnemyPatrol OtherEnemyPatrol;
+    private EnemyPatrol enemyPatrol;
     // Start is called before the first frame update
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        OtherEnemyPatrol = GetComponentInParent<OtherEnemyPatrol>();
+        enemyPatrol = GetComponentInParent<EnemyPatrol>();
     }
 
     private void Update()
@@ -42,8 +42,8 @@ public class Skeleton : MonoBehaviour
             }
         }
 
-        if (OtherEnemyPatrol != null)
-            OtherEnemyPatrol.enabled = !PlayerInSight();
+        if (enemyPatrol != null)
+            enemyPatrol.enabled = !PlayerInSight();
     }
 
     private bool PlayerInSight()
