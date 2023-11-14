@@ -22,12 +22,12 @@ public class HeavyEnemy : MonoBehaviour
     private Health playerHealth;
     public HeroKnight HeroKnight;
 
-    private EnemyPatrol enemyPatrol;
+    private HeavyPatrol enemyPatrol;
     // Start is called before the first frame update
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        enemyPatrol = GetComponentInParent<EnemyPatrol>();
+        enemyPatrol = GetComponentInParent<HeavyPatrol>();
     }
 
     private void Update()

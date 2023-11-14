@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class HeroKnight : MonoBehaviour {
 
@@ -12,10 +14,13 @@ public class HeroKnight : MonoBehaviour {
     [SerializeField] Transform  m_attackPoint;
     [SerializeField] float      m_attackRange = 0.5f;
     [SerializeField] int        m_attackDamage = 20;
-    [SerializeField] public int m_potions;
+    [SerializeField] public static int m_potions;
+    [SerializeField] public int score;
     
     public LayerMask enemyLayers;
+    public UIThingy UIThingy;
     public bool isBlocking;
+    public TMP_Text potionText;
 
     public Animator            m_animator;
     private Rigidbody2D         m_body2d;
@@ -46,6 +51,7 @@ public class HeroKnight : MonoBehaviour {
         m_wallSensorL1 = transform.Find("WallSensor_L1").GetComponent<Sensor_HeroKnight>();
         m_wallSensorL2 = transform.Find("WallSensor_L2").GetComponent<Sensor_HeroKnight>();
         isBlocking = false;
+        score = 0;
     }
 
     // Update is called once per frame
@@ -53,6 +59,7 @@ public class HeroKnight : MonoBehaviour {
     {
         // Increase timer that controls attack combo
         m_timeSinceAttack += Time.deltaTime;
+        potionText.text = m_potions.ToString();
 
         // Increase timer that checks roll duration
         if(m_rolling)
@@ -228,5 +235,20 @@ public class HeroKnight : MonoBehaviour {
             return;
 
         Gizmos.DrawWireSphere(m_attackPoint.position, m_attackRange);
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Potion")
+        {
+            HeroKnight.m_potions++;
+            other.GetComponent<Collider2D>().enabled = false;
+            other.gameObject.SetActive(false);
+        } else if (other.tag == "Win"){
+            if (score == 150)
+            {
+                StartCoroutine(UIThingy.TransitionLevels(SceneManager.GetActiveScene().buildIndex + 1));
+            }
+        }
     }
 }

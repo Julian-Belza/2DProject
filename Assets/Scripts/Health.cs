@@ -55,7 +55,7 @@ public class Health : MonoBehaviour
                     GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
                     GetComponent<BoxCollider2D>().enabled = false;
                 }
-                    
+                HeroKnight.score += 50;
                 dead = true;
             }
         }
