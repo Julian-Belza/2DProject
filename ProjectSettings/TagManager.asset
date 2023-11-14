@@ -10,6 +10,7 @@ TagManager:
   - Ronin
   - King
   - GameMusic
+  - DeathBarrier
   layers:
   - Default
   - TransparentFX
