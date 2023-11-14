@@ -22,12 +22,12 @@ public class BatPatrol : MonoBehaviour
     private Health playerHealth;
     public HeroKnight HeroKnight;
 
-    private EnemyPatrol enemyPatrol;
+    private OtherEnemyPatrol enemyPatrol;
     // Start is called before the first frame update
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        enemyPatrol = GetComponentInParent<EnemyPatrol>();
+        enemyPatrol = GetComponentInParent<OtherEnemyPatrol>();
     }
 
     private void Update()
