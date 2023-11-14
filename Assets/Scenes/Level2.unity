@@ -3775,6 +3775,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9043920546160527475, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
+      propertyPath: m_animator
+      value: 
+      objectReference: {fileID: 763074791}
+    - target: {fileID: 9043920546160527475, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       propertyPath: m_jumpForce
       value: 6.5
       objectReference: {fileID: 0}
@@ -3809,6 +3813,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f40055d4c297612439513757393b1a4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &763074791 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2655505060201611074, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
+  m_PrefabInstance: {fileID: 763074783}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &782794940
 GameObject:
   m_ObjectHideFlags: 0
@@ -8558,7 +8567,8 @@ GameObject:
   - component: {fileID: 1884152532}
   - component: {fileID: 1884152536}
   - component: {fileID: 1884152537}
-  m_Layer: 0
+  - component: {fileID: 1884152538}
+  m_Layer: 6
   m_Name: EnemyBat
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -8710,9 +8720,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dee8380db4258b4fa27fe427896578c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCooldown: 10
-  range: 0.57
-  colliderDistance: 0.2
+  attackCooldown: 1.5
+  range: 1.08
+  colliderDistance: 0.19
   damage: 5
   boxCollider: {fileID: 1884152532}
   playerLayer:
@@ -8747,6 +8757,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1884152538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884152531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f40055d4c297612439513757393b1a4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 30
+  HeroKnight: {fileID: 763074784}
+  iFramesDuration: 0
+  numberOfFlashes: 0
+  components:
+  - {fileID: 1884152536}
+  - {fileID: 640614985}
 --- !u!1 &1940224189
 GameObject:
   m_ObjectHideFlags: 0
