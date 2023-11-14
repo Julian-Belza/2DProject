@@ -22,12 +22,12 @@ public class Skeleton : MonoBehaviour
     private Health playerHealth;
     public HeroKnight HeroKnight;
 
-    private EnemyPatrol enemyPatrol;
+    private OtherEnemyPatrol OtherEnemyPatrol;
     // Start is called before the first frame update
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        enemyPatrol = GetComponentInParent<EnemyPatrol>();
+        OtherEnemyPatrol = GetComponentInParent<OtherEnemyPatrol>();
     }
 
     private void Update()
@@ -42,8 +42,8 @@ public class Skeleton : MonoBehaviour
             }
         }
 
-        if (enemyPatrol != null)
-            enemyPatrol.enabled = !PlayerInSight();
+        if (OtherEnemyPatrol != null)
+            OtherEnemyPatrol.enabled = !PlayerInSight();
     }
 
     private bool PlayerInSight()

@@ -2659,7 +2659,7 @@ MonoBehaviour:
   rightEdge: {fileID: 126995153}
   enemy: {fileID: 1884152535}
   speed: 2
-  idleDuration: 2
+  idleDuration: 1
   anim: {fileID: 1884152533}
 --- !u!4 &640614986
 Transform:
@@ -3706,6 +3706,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4471072068038359228, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.04
+      objectReference: {fileID: 0}
     - target: {fileID: 6323719953710832613, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       propertyPath: m_Name
       value: HeroKnight
@@ -3773,6 +3777,10 @@ PrefabInstance:
     - target: {fileID: 9043920546160527475, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       propertyPath: m_jumpForce
       value: 6.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9043920546160527475, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
+      propertyPath: m_attackRange
+      value: 1.19
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8702,7 +8710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dee8380db4258b4fa27fe427896578c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCooldown: 500
+  attackCooldown: 10
   range: 0.57
   colliderDistance: 0.2
   damage: 5
@@ -9205,7 +9213,8 @@ GameObject:
   - component: {fileID: 2115230131}
   - component: {fileID: 2115230135}
   - component: {fileID: 2115230136}
-  m_Layer: 0
+  - component: {fileID: 2115230137}
+  m_Layer: 6
   m_Name: Skeleton (2)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -9244,7 +9253,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.058913406, y: 0.021704793}
+  m_Offset: {x: 0.05199787, y: -0.03016141}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -9255,7 +9264,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2535171, y: 0.5883932}
+  m_Size: {x: 0.17053118, y: 0.4846608}
   m_EdgeRadius: 0
 --- !u!95 &2115230132
 Animator:
@@ -9384,9 +9393,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f33c8b4d6b132704494c8bcd5db99e7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCooldown: 100
-  range: 0.92
-  colliderDistance: 0.25
+  attackCooldown: 2
+  range: 1.99
+  colliderDistance: 0.12
   damage: 10
   boxCollider: {fileID: 2115230131}
   playerLayer:
@@ -9394,6 +9403,25 @@ MonoBehaviour:
     m_Bits: 128
   animator: {fileID: 2115230132}
   HeroKnight: {fileID: 763074784}
+--- !u!114 &2115230137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115230130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f40055d4c297612439513757393b1a4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 50
+  HeroKnight: {fileID: 763074784}
+  iFramesDuration: 0
+  numberOfFlashes: 0
+  components:
+  - {fileID: 2115230136}
+  - {fileID: 2006605508}
 --- !u!1 &2142927776
 GameObject:
   m_ObjectHideFlags: 0
