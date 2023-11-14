@@ -26,7 +26,7 @@ public class UIThingy : MonoBehaviour
 
     public void OnClickQuit()
     {
-        Debug.Log("if you see this ur gay HAHAHAHAHAHAHAH");
+        Debug.Log("Quit");
         Application.Quit();
     }
 
@@ -37,5 +37,9 @@ public class UIThingy : MonoBehaviour
         yield return new WaitForSeconds(animationTime);
 
         SceneManager.LoadScene(buildIndex);
+    }
+    public void OnClickCredit()
+    {
+        StartCoroutine(TransitionLevels(8));
     }
 }
