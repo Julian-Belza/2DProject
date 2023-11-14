@@ -38,7 +38,9 @@ public class HeroKnight : MonoBehaviour {
     private float               m_delayToIdle = 0.0f;
     private float               m_rollDuration = 8.0f / 14.0f;
     private float               m_rollCurrentTime;
-
+    public AudioSource SwordSwing;
+    public AudioSource deathNoise;
+    public AudioSource PotionNoise;
 
     // Use this for initialization
     void Start ()
@@ -116,6 +118,7 @@ public class HeroKnight : MonoBehaviour {
         {
             if (m_potions > 0)
             {
+                 PotionNoise.Play();
                 GetComponent<Health>().AddHealth(30.0f);
                 m_potions--;
             }
@@ -124,6 +127,7 @@ public class HeroKnight : MonoBehaviour {
         //Attack
         else if(Input.GetMouseButtonDown(0) && m_timeSinceAttack > 0.25f && !m_rolling)
         {
+            SwordSwing.Play();
             m_currentAttack++;
             m_speed = 2.0f;
 
@@ -242,6 +246,7 @@ public class HeroKnight : MonoBehaviour {
         if (other.tag == "Potion")
         {
             HeroKnight.m_potions++;
+           
             other.GetComponent<Collider2D>().enabled = false;
             other.gameObject.SetActive(false);
         } else if (other.tag == "Win"){
@@ -254,6 +259,7 @@ public class HeroKnight : MonoBehaviour {
 
     private void Die()
     {
+        deathNoise.Play();
         StartCoroutine(UIThingy.TransitionLevels(6));
     }
 }

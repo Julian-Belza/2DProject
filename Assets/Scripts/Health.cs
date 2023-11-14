@@ -20,7 +20,7 @@ public class Health : MonoBehaviour
 
     [Header ("components")]
     [SerializeField] private Behaviour[] components;
-
+    public AudioSource HitNoise;
     private void Awake()
     {
         currentHealth = startingHealth;
@@ -36,6 +36,7 @@ public class Health : MonoBehaviour
 
         if (currentHealth > 0)
         {
+            HitNoise.Play();
             if (!HeroKnight.isBlocking)
             {
                 anim.SetTrigger("Hurt");
