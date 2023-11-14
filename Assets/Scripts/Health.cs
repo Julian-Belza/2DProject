@@ -9,7 +9,7 @@ public class Health : MonoBehaviour
     public float currentHealth { get; private set;}
 
     private Animator anim;
-    private bool dead;
+    public bool dead;
 
     public HeroKnight HeroKnight;
 

@@ -11,7 +11,7 @@ public class UIThingy : MonoBehaviour
 
     public void OnClickStartButton()
     {
-        StartCoroutine(TransitionLevels(2));
+        StartCoroutine(TransitionLevels(1));
     }
 
     public void OnClickMainMenu()

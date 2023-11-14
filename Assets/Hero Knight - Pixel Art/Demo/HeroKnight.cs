@@ -251,4 +251,9 @@ public class HeroKnight : MonoBehaviour {
             }
         }
     }
+
+    private void Die()
+    {
+        StartCoroutine(UIThingy.TransitionLevels(6));
+    }
 }
