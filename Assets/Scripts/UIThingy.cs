@@ -21,7 +21,7 @@ public class UIThingy : MonoBehaviour
 
     public void OnClickHelp()
     {
-        StartCoroutine(TransitionLevels(1));
+        StartCoroutine(TransitionLevels(7));
     }
 
     public void OnClickQuit()
