@@ -30,7 +30,7 @@ public class UIThingy : MonoBehaviour
         Application.Quit();
     }
 
-    IEnumerator TransitionLevels(int buildIndex)
+    public IEnumerator TransitionLevels(int buildIndex)
     {
         transition.SetTrigger("Win");
 
