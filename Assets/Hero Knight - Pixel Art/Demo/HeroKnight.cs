@@ -129,7 +129,7 @@ public class HeroKnight : MonoBehaviour {
         {
             SwordSwing.Play();
             m_currentAttack++;
-            m_speed = 2.0f;
+            m_speed = 3.0f;
 
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(m_attackPoint.position, m_attackRange, enemyLayers);
 

@@ -2075,9 +2075,9 @@ GameObject:
   - component: {fileID: 612475584}
   - component: {fileID: 612475583}
   - component: {fileID: 612475582}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2123,8 +2123,8 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
-  orthographic: 0
+  field of view: 26.991467
+  orthographic: 1
   orthographic size: 5
   m_Depth: 0
   m_CullingMask:
@@ -2150,7 +2150,7 @@ Transform:
   m_GameObject: {fileID: 612475581}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.2285516, y: 4.5121903, z: -0.024986366}
+  m_LocalPosition: {x: 2.32, y: -0.14, z: -0.024986366}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
