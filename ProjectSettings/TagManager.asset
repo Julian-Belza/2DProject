@@ -54,6 +54,9 @@ TagManager:
   - name: Castle Wall
     uniqueID: 3186951053
     locked: 0
+  - name: EnemyLayer
+    uniqueID: 3336426113
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

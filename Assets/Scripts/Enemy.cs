@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour
 
     private Health playerHealth;
     public HeroKnight HeroKnight;
-
+    public AudioSource BlockingNoise;
     private EnemyPatrol enemyPatrol;
     // Start is called before the first frame update
     private void Awake()
@@ -70,7 +70,8 @@ public class Enemy : MonoBehaviour
             playerHealth.TakeDamage(damage);
         } else if (PlayerInSight() && HeroKnight.isBlocking)
         {
-            playerHealth.TakeDamage(damage / 2);
+            BlockingNoise.Play();
+            playerHealth.TakeDamage(damage / 10);
         }
     }
 }
