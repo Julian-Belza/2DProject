@@ -118,7 +118,7 @@ public class HeroKnight : MonoBehaviour {
         {
             if (m_potions > 0)
             {
-                 PotionNoise.Play();
+                PotionNoise.Play();
                 GetComponent<Health>().AddHealth(30.0f);
                 m_potions--;
             }
