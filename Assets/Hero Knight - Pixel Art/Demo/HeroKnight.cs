@@ -252,7 +252,7 @@ public class HeroKnight : MonoBehaviour {
         } else if (other.tag == "Win"){
             if (score == 150)
             {
-                StartCoroutine(UIThingy.TransitionLevels(SceneManager.GetActiveScene().buildIndex + 1));
+                StartCoroutine(UIThingy.TransitionLevels(0));
             }
         }
     }
