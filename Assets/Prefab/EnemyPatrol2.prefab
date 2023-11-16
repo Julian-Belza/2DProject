@@ -241,11 +241,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 100
+  score: 50
+  dead: 0
+  HeroKnight: {fileID: 0}
   iFramesDuration: 0
   numberOfFlashes: 0
   components:
   - {fileID: 7034632657546977534}
   - {fileID: 0}
+  HitNoise: {fileID: 0}
 --- !u!114 &8205352633009473158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,6 +271,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   animator: {fileID: 8748268363013685195}
+  HeroKnight: {fileID: 0}
+  BlockingNoise: {fileID: 0}
 --- !u!61 &8711641920322410599 stripped
 BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 61346583712760016, guid: 3248535f6a2562c489a1223a75951ef2, type: 3}
