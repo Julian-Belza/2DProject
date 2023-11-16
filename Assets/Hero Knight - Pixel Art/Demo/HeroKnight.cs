@@ -255,6 +255,12 @@ public class HeroKnight : MonoBehaviour {
                 StartCoroutine(UIThingy.TransitionLevels(0));
             }
         }
+        if(other.tag == "DeathBarrier")
+        {
+            Die();
+        }
+      
+        
     }
 
     private void Die()
