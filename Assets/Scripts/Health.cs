@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
     [Header ("Health")]
     [SerializeField] public float startingHealth;
     public float currentHealth { get; private set;}
+    [SerializeField] public int score;
 
     private Animator anim;
     public bool dead;
@@ -50,13 +51,14 @@ public class Health : MonoBehaviour
             if (!dead)
             {
                 anim.SetTrigger("Death");
+                HeroKnight.totalScore += score;
+                Debug.Log(HeroKnight.totalScore);
                 foreach (Behaviour component in components)
                 {
                     component.enabled = false;
                     GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
                     GetComponent<BoxCollider2D>().enabled = false;
                 }
-                HeroKnight.score += 50;
                 dead = true;
             }
         }

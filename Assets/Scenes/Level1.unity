@@ -5459,6 +5459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 80
+  score: 50
   dead: 0
   HeroKnight: {fileID: 715772785}
   iFramesDuration: 0
@@ -5801,6 +5802,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7034632657546977534, guid: 6353a566c4f7e5a44becbb206a4c636f, type: 3}
+      propertyPath: score
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034632657546977534, guid: 6353a566c4f7e5a44becbb206a4c636f, type: 3}
       propertyPath: HitNoise
       value: 
       objectReference: {fileID: 196465615}
@@ -5980,6 +5985,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 229688769}
     m_Modifications:
+    - target: {fileID: 331423492316700965, guid: 83def704e8358184487a39ae71e7b627, type: 3}
+      propertyPath: score
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 331423492316700965, guid: 83def704e8358184487a39ae71e7b627, type: 3}
       propertyPath: HitNoise
       value: 
