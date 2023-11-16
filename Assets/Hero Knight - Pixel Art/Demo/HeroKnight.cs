@@ -15,7 +15,7 @@ public class HeroKnight : MonoBehaviour {
     [SerializeField] float      m_attackRange = 0.5f;
     [SerializeField] int        m_attackDamage = 20;
     [SerializeField] public static int m_potions;
-    [SerializeField] public int score;
+    [SerializeField] public int totalScore;
     
     public LayerMask enemyLayers;
     public UIThingy UIThingy;
@@ -53,7 +53,7 @@ public class HeroKnight : MonoBehaviour {
         m_wallSensorL1 = transform.Find("WallSensor_L1").GetComponent<Sensor_HeroKnight>();
         m_wallSensorL2 = transform.Find("WallSensor_L2").GetComponent<Sensor_HeroKnight>();
         isBlocking = false;
-        score = 0;
+        totalScore = 0;
     }
 
     // Update is called once per frame
@@ -246,11 +246,10 @@ public class HeroKnight : MonoBehaviour {
         if (other.tag == "Potion")
         {
             HeroKnight.m_potions++;
-           
             other.GetComponent<Collider2D>().enabled = false;
             other.gameObject.SetActive(false);
         } else if (other.tag == "Win"){
-            if (score == 150)
+            if (totalScore == 150)
             {
                 StartCoroutine(UIThingy.TransitionLevels(0));
             }
