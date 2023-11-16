@@ -70,8 +70,17 @@ public class Enemy : MonoBehaviour
             playerHealth.TakeDamage(damage);
         } else if (PlayerInSight() && HeroKnight.isBlocking)
         {
+            HeroKnight.m_animator.SetBool("Blocked", true);
+            StartCoroutine(Blocked(1));
             BlockingNoise.Play();
             playerHealth.TakeDamage(damage / 10);
         }
+    }
+
+    IEnumerator Blocked(int delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        HeroKnight.m_animator.SetBool("Blocked", false);
     }
 }

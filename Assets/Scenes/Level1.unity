@@ -1797,9 +1797,16 @@ PrefabInstance:
       propertyPath: PotionNoise
       value: 
       objectReference: {fileID: 1964272221}
+    - target: {fileID: 9043920546160527475, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
+      propertyPath: blockAnimator
+      value: 
+      objectReference: {fileID: 1241271329}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 8413529789942519730, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1241271330}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
 --- !u!114 &513940561 stripped
@@ -2626,6 +2633,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 519420032}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &870352909 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8413529789942519730, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
+  m_PrefabInstance: {fileID: 513940553}
+  m_PrefabAsset: {fileID: 0}
 --- !u!61 &871304731 stripped
 BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 61252362154681264, guid: 2e2183501755a214591e802f3aff33d2, type: 3}
@@ -3019,6 +3031,59 @@ Transform:
   m_Children:
   - {fileID: 2093860047}
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1241271328
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1241271330}
+  - component: {fileID: 1241271329}
+  m_Layer: 0
+  m_Name: Block Flash
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!95 &1241271329
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241271328}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 10404af511fc2ec42a4f9a8af2e53bb7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!4 &1241271330
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241271328}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.37, y: 0.69, z: -0.12445397}
+  m_LocalScale: {x: 1.2575965, y: 1.0358021, z: 1.0841743}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 870352909}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1267642372
 GameObject:
@@ -6053,6 +6118,10 @@ PrefabInstance:
       propertyPath: BlockingNoise
       value: 
       objectReference: {fileID: 1572577402}
+    - target: {fileID: 2224538303059123842, guid: 83def704e8358184487a39ae71e7b627, type: 3}
+      propertyPath: attackCooldown
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5617371980418452343, guid: 83def704e8358184487a39ae71e7b627, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.63
