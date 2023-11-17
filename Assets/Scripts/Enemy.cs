@@ -71,13 +71,13 @@ public class Enemy : MonoBehaviour
         } else if (PlayerInSight() && HeroKnight.isBlocking)
         {
             HeroKnight.m_animator.SetBool("Blocked", true);
-            StartCoroutine(Blocked(1));
+            StartCoroutine(Blocked(.45f));
             BlockingNoise.Play();
             playerHealth.TakeDamage(damage / 10);
         }
     }
 
-    IEnumerator Blocked(int delay)
+    IEnumerator Blocked(float delay)
     {
         yield return new WaitForSeconds(delay);
 
