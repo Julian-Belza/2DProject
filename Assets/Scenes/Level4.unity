@@ -7035,6 +7035,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1554210852}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1716636519 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 610223991038747135, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
+  m_PrefabInstance: {fileID: 1330995755}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f40055d4c297612439513757393b1a4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &1716636523 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 2655505060201611074, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
@@ -7780,9 +7791,11 @@ GameObject:
   - component: {fileID: 1809579824}
   - component: {fileID: 1809579823}
   - component: {fileID: 1809579826}
-  m_Layer: 0
+  - component: {fileID: 1809579827}
+  - component: {fileID: 1809579828}
+  m_Layer: 6
   m_Name: King
-  m_TagString: King
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7907,7 +7920,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.021886885, y: -0.25326255}
+  m_Offset: {x: -0.022491291, y: -0.23292196}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -7918,8 +7931,52 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.23050624, y: 0.6034748}
+  m_Size: {x: 0.3643135, y: 0.5627936}
   m_EdgeRadius: 0
+--- !u!114 &1809579827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809579822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f33c8b4d6b132704494c8bcd5db99e7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackCooldown: 1.23
+  range: 2.59
+  colliderDistance: -0.26
+  damage: 30
+  boxCollider: {fileID: 1809579826}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  animator: {fileID: 1809579823}
+  HeroKnight: {fileID: 0}
+--- !u!114 &1809579828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809579822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f40055d4c297612439513757393b1a4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 1500
+  score: 150
+  dead: 0
+  HeroKnight: {fileID: 0}
+  iFramesDuration: 0
+  numberOfFlashes: 0
+  components:
+  - {fileID: 1809579823}
+  - {fileID: 261592234}
+  HitNoise: {fileID: 1733696044}
 --- !u!1 &1817962100
 GameObject:
   m_ObjectHideFlags: 0
@@ -8938,7 +8995,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 2140990933}
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 1716636519}
 --- !u!114 &2140990933
 MonoBehaviour:
   m_ObjectHideFlags: 0
