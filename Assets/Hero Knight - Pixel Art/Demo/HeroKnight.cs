@@ -153,13 +153,8 @@ public class HeroKnight : MonoBehaviour {
             m_timeSinceAttack = 0.0f;
         }
 
-        else if (Input.GetMouseButtonUp(0) && !m_rolling)
-        {
-            m_speed = 4.0f;
-        }
-
         // Block
-        else if (Input.GetMouseButtonDown(1) && !m_rolling)
+        else if ((Input.GetMouseButtonDown(1) || Input.GetKeyDown("f")) && !m_rolling)
         {
             m_animator.SetTrigger("Block");
             m_animator.SetBool("IdleBlock", true);
@@ -167,7 +162,7 @@ public class HeroKnight : MonoBehaviour {
             m_body2d.constraints = RigidbodyConstraints2D.FreezePositionX;
         }
 
-        else if (Input.GetMouseButtonUp(1))
+        else if (Input.GetMouseButtonUp(1) || Input.GetKeyUp("f"))
         {
             m_animator.SetBool("IdleBlock", false);
             isBlocking = false;
@@ -176,7 +171,7 @@ public class HeroKnight : MonoBehaviour {
         }
 
         // Roll
-        else if (Input.GetKeyDown("left shift") && !m_rolling && !m_isWallSliding && m_grounded)
+        else if ((Input.GetKeyDown("left shift") || (Input.GetKeyDown("q"))) && !m_rolling && !m_isWallSliding && m_grounded)
         {
             m_rolling = true;
             m_animator.SetTrigger("Roll");
