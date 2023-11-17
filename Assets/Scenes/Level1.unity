@@ -5560,6 +5560,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1576609838}
     - target: {fileID: 8205352633009473158, guid: 6353a566c4f7e5a44becbb206a4c636f, type: 3}
+      propertyPath: range
+      value: 0.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 8205352633009473158, guid: 6353a566c4f7e5a44becbb206a4c636f, type: 3}
       propertyPath: damage
       value: 20
       objectReference: {fileID: 0}
@@ -5571,6 +5575,10 @@ PrefabInstance:
       propertyPath: BlockingNoise
       value: 
       objectReference: {fileID: 1572577402}
+    - target: {fileID: 8205352633009473158, guid: 6353a566c4f7e5a44becbb206a4c636f, type: 3}
+      propertyPath: colliderDistance
+      value: -0.64
+      objectReference: {fileID: 0}
     - target: {fileID: 8849419613307331829, guid: 6353a566c4f7e5a44becbb206a4c636f, type: 3}
       propertyPath: m_SortingLayer
       value: -1
