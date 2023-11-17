@@ -37,6 +37,8 @@ public class HeroKnight : MonoBehaviour {
     private float               m_timeSinceAttack = 0.0f;
     private float               m_delayToIdle = 0.0f;
     private float               m_rollDuration = 8.0f / 14.0f;
+    private float               m_rollCooldown = 0.0f;
+    private float               m_nextRoll = 1.0f; 
     private float               m_rollCurrentTime;
     public AudioSource SwordSwing;
     public AudioSource deathNoise;
@@ -61,6 +63,7 @@ public class HeroKnight : MonoBehaviour {
     {
         // Increase timer that controls attack combo
         m_timeSinceAttack += Time.deltaTime;
+        m_rollCooldown += Time.deltaTime;
         potionText.text = m_potions.ToString();
 
         // Increase timer that checks roll duration
@@ -171,12 +174,13 @@ public class HeroKnight : MonoBehaviour {
         }
 
         // Roll
-        else if ((Input.GetKeyDown("left shift") || (Input.GetKeyDown("q"))) && !m_rolling && !m_isWallSliding && m_grounded)
+        else if ((Input.GetKeyDown("left shift") || (Input.GetKeyDown("q"))) && !m_rolling && !m_isWallSliding && m_grounded && m_rollCooldown > m_nextRoll)
         {
             m_rolling = true;
             m_animator.SetTrigger("Roll");
             m_body2d.velocity = new Vector2(m_facingDirection * m_rollForce, m_body2d.velocity.y);
             StartCoroutine(GetComponent<Health>().invulnerability());
+            m_rollCooldown = 0;
         }
             
 
