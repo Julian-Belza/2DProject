@@ -1447,6 +1447,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96a14fea573d93a40b0e987233bef293, type: 3}
+--- !u!1 &753313677
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 753313678}
+  m_Layer: 0
+  m_Name: BossResetPoint
+  m_TagString: ResetPoint
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &753313678
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753313677}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: 1.003, y: 0.007, z: 0.005929576}
+  m_LocalScale: {x: 0.28488404, y: 0.28488404, z: 0.28488404}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2117548770}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &772909970
 GameObject:
   m_ObjectHideFlags: 0
@@ -5325,7 +5356,8 @@ Transform:
   m_LocalPosition: {x: 3.3, y: -3.04, z: 0}
   m_LocalScale: {x: 3.5102, y: 3.5102, z: 3.5102}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 753313678}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &2117548771
@@ -5342,6 +5374,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   r_Anim: {fileID: 2117548768}
   player: {fileID: 1804749298}
+  resetPoint: {fileID: 753313678}
   isFlipped: 0
 --- !u!50 &2117548772
 Rigidbody2D:
@@ -5412,6 +5445,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
+  isAttacking: 0
   animator: {fileID: 2117548768}
   HeroKnight: {fileID: 1804749296}
   BlockingNoise: {fileID: 2127002894}

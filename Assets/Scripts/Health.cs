@@ -61,7 +61,6 @@ public class Health : MonoBehaviour
                 {
                     component.enabled = false;
                 }
-                StartCoroutine(FreezePositionAfterDeath());
                 dead = true;
             }
         }
@@ -93,12 +92,5 @@ public class Health : MonoBehaviour
 
         rb.constraints = RigidbodyConstraints2D.None;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-    }
-
-    IEnumerator FreezePositionAfterDeath()
-    {
-        yield return new WaitForSeconds(0.1f);
-
-        rb.constraints = RigidbodyConstraints2D.FreezePosition;
     }
 }

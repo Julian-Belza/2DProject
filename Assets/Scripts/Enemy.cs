@@ -17,6 +17,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] private LayerMask playerLayer;
     private float cooldownTimer = Mathf.Infinity;
 
+    public bool isAttacking = false;
+
     public Animator animator;
     Rigidbody2D rb;
 
@@ -39,11 +41,13 @@ public class Enemy : MonoBehaviour
         {
             if (cooldownTimer >= attackCooldown)
             {
+                isAttacking = true;
                 cooldownTimer = 0;
                 rb.constraints = RigidbodyConstraints2D.FreezePosition;
                 animator.SetTrigger("Attack");
                 rb.constraints = RigidbodyConstraints2D.None;
                 rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+                isAttacking = false;
             }
         }
 
@@ -87,5 +91,10 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(delay);
 
         HeroKnight.m_animator.SetBool("Blocked", false);
+    }
+
+    public void BossReset()
+    {
+
     }
 }
