@@ -6,7 +6,7 @@ public class Ronin_Run : StateMachineBehaviour
 {
     Transform player;
     Rigidbody2D rb;
-    public float speed = 3;
+    public float speed = 2;
     public float attackRange = 3;
 
     Ronin ronin;

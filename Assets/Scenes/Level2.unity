@@ -1990,7 +1990,7 @@ GameObject:
   m_Component:
   - component: {fileID: 303763799}
   - component: {fileID: 303763801}
-  - component: {fileID: 303763800}
+  - component: {fileID: 303763802}
   m_Layer: 5
   m_Name: Healthbar
   m_TagString: Untagged
@@ -2020,20 +2020,6 @@ RectTransform:
   m_AnchoredPosition: {x: -490.56003, y: 480.36996}
   m_SizeDelta: {x: 454.1612, y: 21.7039}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &303763800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 303763798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6f98cb7e7ca1e84c8ceb07d85aa1f7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 303763801}
-  playerHealth: {fileID: 373521239}
 --- !u!114 &303763801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2085,6 +2071,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &303763802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303763798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fe2bd5dfe27c6a45a709d27e2f58cd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 303763801}
+  playerHealth: {fileID: 373521239}
 --- !u!1 &329946510
 GameObject:
   m_ObjectHideFlags: 0
@@ -2556,6 +2556,10 @@ PrefabInstance:
       propertyPath: HeroKnight
       value: 
       objectReference: {fileID: 373521241}
+    - target: {fileID: 5163347191528856363, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
+      propertyPath: HitNoise
+      value: 
+      objectReference: {fileID: 1273456998}
     - target: {fileID: 6323719953710832613, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       propertyPath: m_Name
       value: HeroKnight
@@ -2635,13 +2639,13 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
 --- !u!114 &373521239 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 610223991038747135, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5163347191528856363, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
   m_PrefabInstance: {fileID: 373521238}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f40055d4c297612439513757393b1a4e, type: 3}
+  m_Script: {fileID: 11500000, guid: 837561b17807c824c818a06ddd8e3dd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!95 &373521240 stripped
@@ -7190,6 +7194,18 @@ PrefabInstance:
       propertyPath: HeroKnight
       value: 
       objectReference: {fileID: 373521241}
+    - target: {fileID: 331423492316700965, guid: 83def704e8358184487a39ae71e7b627, type: 3}
+      propertyPath: components.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 331423492316700965, guid: 83def704e8358184487a39ae71e7b627, type: 3}
+      propertyPath: components.Array.data[2]
+      value: 
+      objectReference: {fileID: 1474108128}
+    - target: {fileID: 331423492316700965, guid: 83def704e8358184487a39ae71e7b627, type: 3}
+      propertyPath: components.Array.data[3]
+      value: 
+      objectReference: {fileID: 1474108127}
     - target: {fileID: 584913545912078532, guid: 83def704e8358184487a39ae71e7b627, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.8953236
@@ -7249,6 +7265,10 @@ PrefabInstance:
     - target: {fileID: 6258960172817067095, guid: 83def704e8358184487a39ae71e7b627, type: 3}
       propertyPath: m_Name
       value: LightBanditLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: 6642407131896344193, guid: 83def704e8358184487a39ae71e7b627, type: 3}
+      propertyPath: m_Mass
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7671,6 +7691,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1136440195}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1474108127 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 331423492316700965, guid: 83def704e8358184487a39ae71e7b627, type: 3}
+  m_PrefabInstance: {fileID: 1387914815}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f40055d4c297612439513757393b1a4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1474108128 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 6648575153945924211, guid: 83def704e8358184487a39ae71e7b627, type: 3}
+  m_PrefabInstance: {fileID: 1387914815}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1485814218
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7761,7 +7797,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7034632657546977534, guid: 6353a566c4f7e5a44becbb206a4c636f, type: 3}
       propertyPath: components.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7034632657546977534, guid: 6353a566c4f7e5a44becbb206a4c636f, type: 3}
       propertyPath: components.Array.data[0]
@@ -7773,6 +7809,10 @@ PrefabInstance:
       objectReference: {fileID: 1485814219}
     - target: {fileID: 7034632657546977534, guid: 6353a566c4f7e5a44becbb206a4c636f, type: 3}
       propertyPath: components.Array.data[2]
+      value: 
+      objectReference: {fileID: 1485814223}
+    - target: {fileID: 7034632657546977534, guid: 6353a566c4f7e5a44becbb206a4c636f, type: 3}
+      propertyPath: components.Array.data[3]
       value: 
       objectReference: {fileID: 1485814221}
     - target: {fileID: 8205352633009473158, guid: 6353a566c4f7e5a44becbb206a4c636f, type: 3}
@@ -7833,6 +7873,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f40055d4c297612439513757393b1a4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &1485814223 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 8711641920322410599, guid: 6353a566c4f7e5a44becbb206a4c636f, type: 3}
+  m_PrefabInstance: {fileID: 1485814218}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1495009456
 GameObject:
   m_ObjectHideFlags: 0
@@ -10063,7 +10108,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7034632657546977534, guid: 6353a566c4f7e5a44becbb206a4c636f, type: 3}
       propertyPath: components.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7034632657546977534, guid: 6353a566c4f7e5a44becbb206a4c636f, type: 3}
       propertyPath: components.Array.data[0]
@@ -10077,6 +10122,10 @@ PrefabInstance:
       propertyPath: components.Array.data[2]
       value: 
       objectReference: {fileID: 1844753128}
+    - target: {fileID: 7034632657546977534, guid: 6353a566c4f7e5a44becbb206a4c636f, type: 3}
+      propertyPath: components.Array.data[3]
+      value: 
+      objectReference: {fileID: 1844753130}
     - target: {fileID: 8205352633009473158, guid: 6353a566c4f7e5a44becbb206a4c636f, type: 3}
       propertyPath: damage
       value: 20
@@ -10143,6 +10192,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f40055d4c297612439513757393b1a4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &1844753130 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 8711641920322410599, guid: 6353a566c4f7e5a44becbb206a4c636f, type: 3}
+  m_PrefabInstance: {fileID: 1844753125}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1845713323
 GameObject:
   m_ObjectHideFlags: 0
@@ -10486,6 +10540,18 @@ PrefabInstance:
       propertyPath: HeroKnight
       value: 
       objectReference: {fileID: 373521241}
+    - target: {fileID: 331423492316700965, guid: 83def704e8358184487a39ae71e7b627, type: 3}
+      propertyPath: components.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 331423492316700965, guid: 83def704e8358184487a39ae71e7b627, type: 3}
+      propertyPath: components.Array.data[2]
+      value: 
+      objectReference: {fileID: 2124748227}
+    - target: {fileID: 331423492316700965, guid: 83def704e8358184487a39ae71e7b627, type: 3}
+      propertyPath: components.Array.data[3]
+      value: 
+      objectReference: {fileID: 2124748228}
     - target: {fileID: 584913545912078532, guid: 83def704e8358184487a39ae71e7b627, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.56
@@ -10553,6 +10619,10 @@ PrefabInstance:
     - target: {fileID: 6258960172817067095, guid: 83def704e8358184487a39ae71e7b627, type: 3}
       propertyPath: m_Name
       value: LightBanditRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 6642407131896344193, guid: 83def704e8358184487a39ae71e7b627, type: 3}
+      propertyPath: m_Mass
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11498,6 +11568,22 @@ SpriteRenderer:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5895219734498642978, guid: 714d70b9db5e8c74e9fc994b4019094a, type: 3}
   m_PrefabInstance: {fileID: 2901614366409504182}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2124748227 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 331423492316700965, guid: 83def704e8358184487a39ae71e7b627, type: 3}
+  m_PrefabInstance: {fileID: 1892398097}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f40055d4c297612439513757393b1a4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &2124748228 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 6648575153945924211, guid: 83def704e8358184487a39ae71e7b627, type: 3}
+  m_PrefabInstance: {fileID: 1892398097}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2128253336
 GameObject:

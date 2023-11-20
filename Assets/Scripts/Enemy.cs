@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
     public Animator animator;
     Rigidbody2D rb;
 
-    private Health playerHealth;
+    private PlayerHealth playerHealth;
     public HeroKnight HeroKnight;
     public AudioSource BlockingNoise;
     private EnemyPatrol enemyPatrol;
@@ -58,7 +58,7 @@ public class Enemy : MonoBehaviour
         0, Vector2.left, 0, playerLayer);
 
         if (hit.collider != null)
-            playerHealth = hit.transform.GetComponent<Health>();
+            playerHealth = hit.transform.GetComponent<PlayerHealth>();
         return hit.collider != null;
     }
 

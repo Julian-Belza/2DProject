@@ -122,7 +122,7 @@ public class HeroKnight : MonoBehaviour {
             if (m_potions > 0)
             {
                 PotionNoise.Play();
-                GetComponent<Health>().AddHealth(30.0f);
+                GetComponent<PlayerHealth>().AddHealth(30.0f);
                 m_potions--;
             }
         }  
@@ -179,7 +179,7 @@ public class HeroKnight : MonoBehaviour {
             m_rolling = true;
             m_animator.SetTrigger("Roll");
             m_body2d.velocity = new Vector2(m_facingDirection * m_rollForce, m_body2d.velocity.y);
-            StartCoroutine(GetComponent<Health>().invulnerability());
+            StartCoroutine(GetComponent<PlayerHealth>().invulnerability());
             m_rollCooldown = 0;
         }
             

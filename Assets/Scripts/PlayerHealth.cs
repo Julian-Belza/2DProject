@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Health : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
     [Header ("Health")]
     [SerializeField] public float startingHealth;
@@ -13,7 +13,6 @@ public class Health : MonoBehaviour
     public bool dead;
 
     public HeroKnight HeroKnight;
-    Rigidbody2D rb;
 
     [Header ("iFrames")]
     [SerializeField] private float iFramesDuration;
@@ -29,8 +28,6 @@ public class Health : MonoBehaviour
 
         anim = GetComponent<Animator>();
 
-        rb = GetComponent<Rigidbody2D>();
-
         spriteRend = GetComponent<SpriteRenderer>();
     }
 
@@ -44,7 +41,6 @@ public class Health : MonoBehaviour
             if (!HeroKnight.isBlocking)
             {
                 anim.SetTrigger("Hurt");
-                StartCoroutine(standStill());
                 StartCoroutine(invulnerability());
             } else if (HeroKnight.isBlocking)
             {
@@ -60,8 +56,9 @@ public class Health : MonoBehaviour
                 foreach (Behaviour component in components)
                 {
                     component.enabled = false;
+                    GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
+                    GetComponent<BoxCollider2D>().enabled = false;
                 }
-                StartCoroutine(FreezePositionAfterDeath());
                 dead = true;
             }
         }
@@ -83,22 +80,5 @@ public class Health : MonoBehaviour
             yield return new WaitForSeconds(iFramesDuration / (numberOfFlashes * 2));
         }
         Physics2D.IgnoreLayerCollision(6,7, false);
-    }
-
-    IEnumerator standStill()
-    {
-        rb.constraints = RigidbodyConstraints2D.FreezePosition;
-
-        yield return new WaitForSeconds(1.0f);
-
-        rb.constraints = RigidbodyConstraints2D.None;
-        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-    }
-
-    IEnumerator FreezePositionAfterDeath()
-    {
-        yield return new WaitForSeconds(0.1f);
-
-        rb.constraints = RigidbodyConstraints2D.FreezePosition;
     }
 }
