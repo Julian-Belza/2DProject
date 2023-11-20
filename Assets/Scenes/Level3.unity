@@ -1921,6 +1921,7 @@ GameObject:
   m_Component:
   - component: {fileID: 993809188}
   - component: {fileID: 993809189}
+  - component: {fileID: 993809190}
   m_Layer: 0
   m_Name: RoninHealth
   m_TagString: Untagged
@@ -1941,6 +1942,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2081671030}
+  - {fileID: 1340354205}
   - {fileID: 1158338174}
   m_Father: {fileID: 1839127256}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2000,6 +2002,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &993809190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993809187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6f98cb7e7ca1e84c8ceb07d85aa1f7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 993809189}
+  playerHealth: {fileID: 2117548773}
 --- !u!1001 &1003101153
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2545,6 +2561,81 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5348812085201535596, guid: 96a14fea573d93a40b0e987233bef293, type: 3}
   m_PrefabInstance: {fileID: 1124607305}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1340354204
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1340354205}
+  - component: {fileID: 1340354207}
+  - component: {fileID: 1340354206}
+  m_Layer: 0
+  m_Name: Fill (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1340354205
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340354204}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 993809188}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.53497314, y: 0.039367676}
+  m_SizeDelta: {x: -26.767, y: -0.079}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1340354206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340354204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1340354207
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340354204}
+  m_CullTransparentMesh: 1
 --- !u!1 &1355411368
 GameObject:
   m_ObjectHideFlags: 0
@@ -4020,6 +4111,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f40055d4c297612439513757393b1a4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1804749298 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8413529789942519730, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
+  m_PrefabInstance: {fileID: 1804749290}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1813677303
 GameObject:
   m_ObjectHideFlags: 0
@@ -5138,9 +5234,12 @@ GameObject:
   - component: {fileID: 2117548768}
   - component: {fileID: 2117548767}
   - component: {fileID: 2117548771}
-  m_Layer: 0
+  - component: {fileID: 2117548772}
+  - component: {fileID: 2117548773}
+  - component: {fileID: 2117548774}
+  m_Layer: 6
   m_Name: Martial Hero
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5291,6 +5390,80 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   r_Anim: {fileID: 2117548768}
+  player: {fileID: 1804749298}
+  isFlipped: 0
+--- !u!50 &2117548772
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117548766}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &2117548773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117548766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f40055d4c297612439513757393b1a4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 500
+  score: 150
+  dead: 0
+  HeroKnight: {fileID: 1804749296}
+  iFramesDuration: 0
+  numberOfFlashes: 0
+  components:
+  - {fileID: 2117548774}
+  - {fileID: 2117548771}
+  HitNoise: {fileID: 1389645340}
+--- !u!114 &2117548774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117548766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 016cc84af30c07644b06244c79793e0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackCooldown: 4
+  range: 3
+  colliderDistance: 0.13
+  damage: 20
+  boxCollider: {fileID: 2117548767}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  animator: {fileID: 2117548768}
+  HeroKnight: {fileID: 1804749296}
+  BlockingNoise: {fileID: 2127002894}
 --- !u!1 &2118256671
 GameObject:
   m_ObjectHideFlags: 0

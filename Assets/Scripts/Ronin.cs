@@ -5,9 +5,14 @@ using UnityEngine;
 public class Ronin : MonoBehaviour
 {
     public Animator r_Anim;
+
+    public Transform player;
+
+    public bool isFlipped = false;
     // Start is called before the first frame update
     void Start()
     {
+        r_Anim.enabled = false;
         StartCoroutine(Stand());
     }
 
@@ -19,12 +24,26 @@ public class Ronin : MonoBehaviour
 
     IEnumerator Stand()
     {
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(0.8f);
 
-        r_Anim.SetInteger("fdnsaasofao", 1);
+        r_Anim.enabled = true;
+    }
 
-        yield return new WaitForSeconds(0.5f);
+    public void LookAtPlayer()
+    {
+        Vector3 flipped = transform.localScale;
+        flipped.z *= -1f;
 
-        r_Anim.SetInteger("fdnsaasofao", 2);
+        if (transform.position.x > player.position.x && isFlipped)
+        {
+            transform.localScale = flipped;
+            transform.Rotate(0f, 180f, 0f);
+            isFlipped = false;
+        } else if (transform.position.x < player.position.x && !isFlipped)
+        {
+            transform.localScale = flipped;
+            transform.Rotate(0f, 180f, 0f);
+            isFlipped = true;
+        }
     }
 }

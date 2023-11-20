@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour
     private float cooldownTimer = Mathf.Infinity;
 
     public Animator animator;
+    Rigidbody2D rb;
 
     private Health playerHealth;
     public HeroKnight HeroKnight;
@@ -28,6 +29,7 @@ public class Enemy : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         enemyPatrol = GetComponentInParent<EnemyPatrol>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
@@ -38,7 +40,10 @@ public class Enemy : MonoBehaviour
             if (cooldownTimer >= attackCooldown)
             {
                 cooldownTimer = 0;
+                rb.constraints = RigidbodyConstraints2D.FreezePosition;
                 animator.SetTrigger("Attack");
+                rb.constraints = RigidbodyConstraints2D.None;
+                rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             }
         }
 
