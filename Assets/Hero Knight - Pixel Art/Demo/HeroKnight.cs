@@ -248,9 +248,9 @@ public class HeroKnight : MonoBehaviour {
             other.GetComponent<Collider2D>().enabled = false;
             other.gameObject.SetActive(false);
         } else if (other.tag == "Win"){
-            if (totalScore == 150)
+            if (totalScore >= 150)
             {
-                StartCoroutine(UIThingy.TransitionLevels(0));
+                StartCoroutine(UIThingy.TransitionLevels(SceneManager.GetActiveScene().buildIndex + 1));
             }
         }
         if(other.tag == "DeathBarrier")
