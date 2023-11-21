@@ -12,6 +12,7 @@ TagManager:
   - GameMusic
   - DeathBarrier
   - ResetPoint
+  - SwordBeam
   layers:
   - Default
   - TransparentFX
