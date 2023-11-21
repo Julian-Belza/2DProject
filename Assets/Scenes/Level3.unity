@@ -20063,7 +20063,7 @@ MonoBehaviour:
   attackCooldown: 4
   range: 3
   colliderDistance: 0.13
-  damage: 20
+  damage: 15
   boxCollider: {fileID: 2117548767}
   playerLayer:
     serializedVersion: 2

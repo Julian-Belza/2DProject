@@ -9495,6 +9495,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4152684319232228941, guid: 297b50db1b4109443bc039d2a2f3a518, type: 3}
+      propertyPath: damage
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152684319232228941, guid: 297b50db1b4109443bc039d2a2f3a518, type: 3}
       propertyPath: HeroKnight
       value: 
       objectReference: {fileID: 1330995756}
