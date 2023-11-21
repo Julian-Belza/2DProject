@@ -21,6 +21,7 @@ public class HeroKnight : MonoBehaviour {
     public UIThingy UIThingy;
     public bool isBlocking;
     public TMP_Text potionText;
+    public TMP_Text ScoreText;
 
     public Animator            m_animator;
     private Rigidbody2D         m_body2d;
@@ -61,6 +62,7 @@ public class HeroKnight : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
+        ScoreText.text = "Score -  " + totalScore.ToString();
         // Increase timer that controls attack combo
         m_timeSinceAttack += Time.deltaTime;
         m_rollCooldown += Time.deltaTime;
