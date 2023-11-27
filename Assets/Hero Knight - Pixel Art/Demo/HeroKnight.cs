@@ -62,7 +62,7 @@ public class HeroKnight : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
-        ScoreText.text = "Score -  " + totalScore.ToString();
+        ScoreText.text = "Score - " + totalScore.ToString();
         // Increase timer that controls attack combo
         m_timeSinceAttack += Time.deltaTime;
         m_rollCooldown += Time.deltaTime;
