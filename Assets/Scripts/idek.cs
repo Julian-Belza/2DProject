@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class idek : MonoBehaviour
 {
     [Header ("Attack Parameters")]
     [SerializeField] private float attackCooldown;
@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour
     private float cooldownTimer = Mathf.Infinity;
 
     public bool isAttacking = false;
+    public bool backingOff;
 
     public Animator animator;
     Rigidbody2D rb;
@@ -32,6 +33,7 @@ public class Enemy : MonoBehaviour
         animator = GetComponent<Animator>();
         enemyPatrol = GetComponentInParent<EnemyPatrol>();
         rb = GetComponent<Rigidbody2D>();
+        backingOff = false;
     }
 
     private void Update()
@@ -48,11 +50,12 @@ public class Enemy : MonoBehaviour
                 rb.constraints = RigidbodyConstraints2D.None;
                 rb.constraints = RigidbodyConstraints2D.FreezeRotation;
                 isAttacking = false;
-            }
+                StartCoroutine(wait());
+            } 
         }
 
-        if (enemyPatrol != null)
-            enemyPatrol.enabled = !PlayerInSight();
+        if (cooldownTimer >= attackCooldown && !PlayerInSight())
+            backingOff = false;
     }
 
     private bool PlayerInSight()
@@ -91,5 +94,12 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(delay);
 
         HeroKnight.m_animator.SetBool("Blocked", false);
+    }
+
+    IEnumerator wait()
+    {
+        yield return new WaitForSeconds(2.0f);
+
+        backingOff = true;
     }
 }

@@ -13,6 +13,7 @@ TagManager:
   - DeathBarrier
   - ResetPoint
   - SwordBeam
+  - MEGAWIN
   layers:
   - Default
   - TransparentFX

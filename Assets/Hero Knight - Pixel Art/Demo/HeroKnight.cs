@@ -254,6 +254,12 @@ public class HeroKnight : MonoBehaviour {
             {
                 StartCoroutine(UIThingy.TransitionLevels(SceneManager.GetActiveScene().buildIndex + 1));
             }
+        } else if (other.tag == "MEGAWIN")
+        {
+            if (totalScore >= 150)
+            {
+                StartCoroutine(UIThingy.TransitionLevels(4));
+            }
         }
         if(other.tag == "DeathBarrier")
         {
@@ -266,6 +272,6 @@ public class HeroKnight : MonoBehaviour {
     private void Die()
     {
         deathNoise.Play();
-        StartCoroutine(UIThingy.TransitionLevels(6));
+        StartCoroutine(UIThingy.TransitionLevels(5));
     }
 }

@@ -21,7 +21,7 @@ public class UIThingy : MonoBehaviour
 
     public void OnClickHelp()
     {
-        StartCoroutine(TransitionLevels(7));
+        StartCoroutine(TransitionLevels(6));
     }
 
     public void OnClickQuit()
@@ -40,6 +40,6 @@ public class UIThingy : MonoBehaviour
     }
     public void OnClickCredit()
     {
-        StartCoroutine(TransitionLevels(8));
+        StartCoroutine(TransitionLevels(7));
     }
 }
